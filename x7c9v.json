@@ -1,0 +1,11 @@
+{
+  "today9uttarpradesh.com": {
+    "status": "active",
+    "pro": true
+  },
+
+  "client1.com": {
+    "status": "active",
+    "pro": false
+  }
+}
