@@ -5,7 +5,7 @@
   },
 
   "https://a2adda2.blogspot.com": {
-    "status": "inactive",
-    "pro": false
+    "status": "active",
+    "pro": true
   }
 }
