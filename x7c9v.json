@@ -1,10 +1,13 @@
 {
-  "today9uttarpradesh.com": {
-    "status": "active",
-    "pro": true
-  },
   "a2adda2.blogspot.com": {
     "status": "active",
-    "pro": true
+    "pro": true,
+    "expires": "2026-12-31"
+  },
+
+  "today9uttarpradesh.com": {
+    "status": "active",
+    "pro": true,
+    "expires": "2027-06-30"
   }
 }
