@@ -1,62 +1,71 @@
 (async function(){
 
-const url = "https://raw.githubusercontent.com/dhan-singh-developer/web-assets/main/x7c9v.json";
+const url =
+"https://raw.githubusercontent.com/dhan-singh-developer/web-assets/main/x7c9v.json";
 
 window.PRO = false;
 
-try {
+try{
 
   const res = await fetch(url + "?t=" + Date.now());
   const data = await res.json();
 
-  const domain = location.hostname.replace("www.","");
+  const domain =
+  location.hostname.replace("www.","");
 
-  if (
-    data &&
-    data[domain] &&
-    data[domain].status === "active" &&
-    data[domain].pro === true
-  ) {
-    window.PRO = true;
-  }
+  const site = data?.[domain];
 
-} catch(e){}
+  if(site){
 
-setTimeout(() => {
+    const expiry =
+    new Date(site.expires);
 
-  const footer = document.querySelector(".copyright-panel");
+    const today =
+    new Date();
 
-  if (footer) {
-
-    const text = footer.innerText.toLowerCase();
-
-    if (!text.includes("dhan singh")) {
-      window.PRO = false;
+    if(
+      site.status === "active" &&
+      site.pro === true &&
+      today <= expiry
+    ){
+      window.PRO = true;
     }
 
-    footer.style.opacity = window.PRO ? "1" : "0.3";
   }
 
-  if (!window.PRO) {
+}catch(e){}
 
-    const d = document.createElement("div");
+setTimeout(()=>{
 
-    d.innerHTML = "⚠ License Warning: Copyright modification detected";
+  const footer =
+  document.querySelector(".copyright-panel");
 
-    d.style =
-      "position:fixed;" +
-      "bottom:0;" +
-      "left:0;" +
-      "right:0;" +
-      "background:red;" +
-      "color:white;" +
-      "padding:10px;" +
-      "z-index:999999;" +
-      "text-align:center;";
+  if(!footer) return;
 
-    document.body.appendChild(d);
+  if(!window.PRO){
+
+    const text =
+    footer.innerText.toLowerCase();
+
+    if(!text.includes("dhan singh")){
+
+      footer.style.opacity = "0.3";
+
+      const d =
+      document.createElement("div");
+
+      d.innerHTML =
+      "⚠ License Expired / Invalid";
+
+      d.style =
+      "position:fixed;bottom:0;left:0;right:0;background:red;color:#fff;padding:10px;z-index:999999;text-align:center;";
+
+      document.body.appendChild(d);
+
+    }
+
   }
 
-}, 2500);
+},2500);
 
 })();
