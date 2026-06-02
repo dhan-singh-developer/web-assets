@@ -1,13 +1,15 @@
 {
-  "a2adda2.blogspot.com": {
-    "status": "active",
-    "pro": false,
-    "expires": "2026-04-31"
-  },
+"a2adda2.blogspot.com": {
+"status": "active",
+"pro": false,
+"credit_edit": false,
+"expires": "2026-04-30"
+},
 
-  "today9uttarpradesh.com": {
-    "status": "active",
-    "pro": true,
-    "expires": "2027-06-30"
-  }
+"today9uttarpradesh.com": {
+"status": "active",
+"pro": true,
+"credit_edit": true,
+"expires": "2027-06-30"
+}
 }
