@@ -6,10 +6,19 @@
 "expires": "2026-04-30"
 },
 
+{
 "today9uttarpradesh.com": {
 "status": "active",
-"pro": true,
+"plan": "pro",
 "credit_edit": true,
 "expires": "2027-06-30"
+},
+
+"example.com": {
+"status": "active",
+"plan": "basic",
+"credit_edit": false,
+"expires": "2026-12-31"
 }
 }
+
